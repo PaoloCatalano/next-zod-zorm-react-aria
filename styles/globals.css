@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --pressed-color: grey;
+}
+
+:root:has(button[aria-pressed="true"]) {
+  --pressed-color: red;
+}
+
+@layer base {
+  p {
+    background-color: rgba(246, 255, 202, 0.733);
+  }
+}
+
+@layer utilities {
+  .form-control.active + .form-label,
+  .form-control:focus + .form-label {
+    top: 0.3rem;
+    background-color: white;
+    transform: translateY(-1rem) translateY(0.1rem) scale(0.8);
+  }
+}
